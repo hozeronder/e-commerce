@@ -16,19 +16,16 @@ const Products = ({category, sort}) => {
     // from an API endpoint with useEffect and useState)
     const itemsPerPage = 6
     const endOffset = itemOffset + itemsPerPage;
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`);
     const currentItems = products.slice(itemOffset, endOffset);
     const pageCount = Math.ceil(products.length / itemsPerPage);
 
     // Invoke when user click to request another page.
     const handlePageClick = (event) => {
         const newOffset = (event.selected * itemsPerPage) % products.length;
-        console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`);
         setItemOffset(newOffset);
     };
 
 
-    console.log(sort, 'sort');
     useEffect(() => {
         if (category) {
             dispatch(getCategoryProducts(category))
@@ -38,7 +35,8 @@ const Products = ({category, sort}) => {
     }, [dispatch, category])
     return (<div>{productsStatus === "LOADING" ? <Loading/> : <>
         <div className='flex flex-wrap'>
-            {currentItems?.sort((a,b) => sort == "inc" ? a.price-b.price : sort == "dec" ? b.price-a.price : "")?.map((product, i) => (<Product key={i} product={product}/>
+            {currentItems?.sort((a, b) => sort == "inc" ? a.price - b.price : sort == "dec" ? b.price - a.price : "")?.map((product, i) => (
+                <Product key={i} product={product}/>
 
             ))}
         </div>

@@ -6,17 +6,15 @@ const Category = ({setCategory}) => {
     const dispatch = useDispatch();
     const {categories} = useSelector(state => state.categories)
 
-    console.log(categories, 'categories');
     useEffect(() => {
-        dispatch(getCategories())
+        dispatch(getCategories()
+        )
     }, [dispatch])
-    return (<div className='w-1/6 bg-gray-100 p-4 max-h-screen'>
-        <div className="border-b pb-1 px-2 text-xl fomt-bold">Category</div>
-        {
-            categories?.map((category, i) => (
-                    <div onClick={() => setCategory(category)} className='text-lg cursor-pointer hover:bg-gray-200 p-2' key={i}>{category}</div>
-                ))
-        }
+    return (<div className='w-3/12 bg-gray-300 p-4 max-h-screen'>
+        <div className="border-b pb-1 px-2 font- font-bold text-3xl">Category</div>
+        {categories?.map((category, i) => (
+            <div onClick={() => setCategory(category)} style={{textTransform: 'capitalize'}} className='text-lg cursor-pointer hover:bg-gray-200 p-2'
+                 key={i}>{category}</div>))}
     </div>)
 }
 export default Category

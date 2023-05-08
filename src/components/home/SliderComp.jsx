@@ -7,41 +7,48 @@ const SliderComp = () => {
     };
     return (<div>
         <Slider {...settings}>
-            <div className='!flex items-center bg-gray-100 px-6'>
-                <div className=''>
-                    <div className='text-7xl font-bold'>
-                        Best Products
+            <div className='!flex items-center px-6 bg-black '>
+                <div className='bg-black'>
+                    <div className='text-7xl font-bold text-white'>
+                        MacBook Pro
                     </div>
-                    <div className='text-lg my-5'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Dolores dolorum illo laudantium qui
-                        quis similique! Aspernatur atque autem ducimus ea eius eos, impedit, laudantium nam perspiciatis
-                        quas sed similique voluptatum?
+                    <div className='text-lg my-5 text-white'>
+                        <p className='text-4xl'>Mover. Maker. Boundary breaker.</p>
+                        <p className='text-justify justify'>
+                            Safari has innovative features that let you enjoy more of the web. <br/> In even more ways.
+                            Built-in privacy features help protect your information and keep your Mac secure. An updated
+                            start page helps you easily and quickly save, find, and share your favorite sites.</p>
                     </div>
                     <div
                         className='border rounded-full cursor-pointer text-2xl w-[200px] h-16 flex items-center justify-center bg-gray-200'>View
                     </div>
                 </div>
                 <img
-                    src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1099&q=80"
+                    src="https://www.apple.com/v/home/az/images/heroes/macbook-pro-14-and-16/hero_mbp_preorder__caf0s6im2nqq_mediumtall.jpg"
                     alt=""/>
             </div>
-            <div className='!flex items-center bg-gray-100 px-6'>
+            <div className='!flex items-center px-6 bg-black'>
                 <div className=''>
-                    <div className='text-7xl font-bold'>
-                        Best Products
+                    <img className="w-10/12"
+                         src="https://www.apple.com/tr/iphone/home/images/overview/hero/hero_iphone_14_pro__e8bufymdlseq_large.jpg"
+                         alt=""/>
+                    <div className='text-7xl font-bold text-white'>
+                        iPhone 14 Pro
                     </div>
-                    <div className='text-lg my-5'>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Dolores dolorum illo laudantium qui
-                        quis similique! Aspernatur atque autem ducimus ea eius eos, impedit, laudantium nam perspiciatis
-                        quas sed similique voluptatum?
+                    <div className='text-lg my-5 text-white'>
+                        <p className='text-4xl'>Pro. Beyond.</p>
+                        <p className='text-justify justify'>
+                            You can choose a payment option that works for you, pay less with a trade‑in, connect your
+                            <br/>new iPhone to your carrier, and get set up quickly. You can also chat with a Specialist anytime.</p>
                     </div>
                     <div
                         className='border rounded-full cursor-pointer text-2xl w-[200px] h-16 flex items-center justify-center bg-gray-200'>View
                     </div>
                 </div>
-                <img
-                    src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                    alt=""/>
+
+                <img className="w-[314.5px]"
+                     src="https://www.apple.com/tr/watch/images/overview/series-8/tile_s8__fwgxo353ney6_medium.jpg"
+                     alt=""/>
             </div>
         </Slider>
     </div>)

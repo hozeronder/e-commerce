@@ -14,7 +14,6 @@ const Detail = () => {
         dispatch(getDetailProduct(id))
     }, [dispatch, id])
 
-    console.log(productDetail, "productDetail")
     return (<div>
         {productDetailStatus === "LOADING" ? <Loading/> : <Detailcomp productDetail={productDetail}/>}
 

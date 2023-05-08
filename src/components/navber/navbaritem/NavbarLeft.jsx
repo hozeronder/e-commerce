@@ -5,7 +5,8 @@ function NavbarLeft() {
 
     const navigate = useNavigate()
 
-    return (<div onClick={() => navigate("/")} className='text-6xl'>Shopal</div>)
+    return (
+            <div onClick={() => navigate("/")} className='text-6xl cursor-pointer'>ShopIN</div>)
 }
 
 export default NavbarLeft

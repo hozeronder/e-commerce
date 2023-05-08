@@ -15,7 +15,7 @@ const CartComp = ({cart}) => {
             <div>{cart?.description}</div>
         </div>
         <div className='font-bold text-2xl'>{cart?.price} TL  ({cart.quantity})</div>
-            <div onClick={()=> dispatch(removeFromCart(cart?.id))} className="bg-red-500 text-white w-[150px] text-2xl cursor-pointer rounded-md h-16 flex items-center justify-center">Delete Product</div>
+            <div onClick={()=> dispatch(removeFromCart(cart?.id))} className="bg-red-500 text-white w-[200px] text-2xl cursor-pointer rounded-md h-16 flex items-center justify-center">Delete Product</div>
         </div>
 
     )
