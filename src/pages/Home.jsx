@@ -4,6 +4,7 @@ import Sorting from "../components/home/Sorting";
 import Category from "../components/home/Category";
 import Products from "../components/home/Products";
 import {useNavigate} from "react-router-dom";
+import Footer from "../components/footer/Footer";
 
 const Home = () => {
     const [sort, setSort] = useState("");
@@ -18,6 +19,7 @@ const Home = () => {
             <Category setCategory={setCategory}/>
             <Products category={category} sort={sort}/>
         </div>
+        <Footer/>
     </div>)
 }
 export default Home

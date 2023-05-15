@@ -4,12 +4,10 @@ import NavbarRight from "./navbaritem/NavbarRight";
 import NavbarMiddle from "./navbaritem/NavbarMiddle";
 
 const Navbar = () => {
-    return (
-        <div className='flex items-center justify-between my-5'>
+    return (<div className='flex max-[800px]:block max-[800px]:justify-around justify-stretch  my-5 @container w-10/12 m-auto'>
             <NavbarLeft/>
             <NavbarMiddle/>
             <NavbarRight/>
-        </div>
-    )
+        </div>)
 }
 export default Navbar
