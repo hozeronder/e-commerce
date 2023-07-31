@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import SliderComp from "../components/home/SliderComp";
+import MiddleComp from "../components/home/MiddleComp";
 import Sorting from "../components/home/Sorting";
 import Category from "../components/home/Category";
 import Products from "../components/home/Products";
@@ -13,13 +13,13 @@ const Home = () => {
 
 
     return (<div>
-        <SliderComp/>
-        <Sorting setSort={setSort}/>
+        <MiddleComp/>
+    {/*    <Sorting setSort={setSort}/>
         <div className='flex'>
             <Category setCategory={setCategory}/>
             <Products category={category} sort={sort}/>
         </div>
-        <Footer/>
+        <Footer/>*/}
     </div>)
 }
 export default Home

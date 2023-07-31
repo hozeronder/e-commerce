@@ -1,10 +1,11 @@
 import React from 'react'
+import {useNavigate} from "react-router-dom";
 
 const NavbarMiddle = () => {
-    return (<div className='flex justify-center m-auto gap-5'>
-                <div>About</div>
-                <div>Contact</div>
-                <div>Pricing</div>
-        </div>)
+    const navigate = useNavigate()
+    return (<div onClick={() => navigate("/")} className='flex justify-center m-auto gap-5 text-4xl cursor-pointer'>
+        <div>HOTEL X</div>
+
+    </div>)
 }
 export default NavbarMiddle
