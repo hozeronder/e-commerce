@@ -15,9 +15,9 @@ function NavbarLeft() {
     return (<Menu as="div" className="relative inline-block text-left">
             <div>
                 <Menu.Button
-                    className="inline-flex w-full justify-center gap-x-1.5 rounded-md px-3 py-2">
+                    className="flex md:inline-flex md:justify-center gap-x-1.5 rounded-md ">
                     MENU
-                    <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true"/>
+                    <ChevronDownIcon className="-mr-1 h-5 w-5 text-white" aria-hidden="true"/>
                 </Menu.Button>
             </div>
 
@@ -32,7 +32,7 @@ function NavbarLeft() {
                 className="bg-white bg-opacity-20"
             >
                 <Menu.Items
-                    className="absolute left-0 z-10 mt-16 md:mt-6 w-36 origin-top-right rounded-md text-white">
+                    className="absolute left-0 z-10 mt-6 min-[800px]:mt-10 w-28 origin-top-right rounded-md text-white">
                     <div className="py-1">
                         <Menu.Item>
                             {({active}) => (
@@ -40,7 +40,7 @@ function NavbarLeft() {
                                     href="#"
                                     className={classNames(
                                         active ? 'bg-none text-white' : 'text-white',
-                                        'block px-4 py-2'
+                                        'block px-2 py-1'
                                     )}
                                 >
                                     Account settings
@@ -53,7 +53,7 @@ function NavbarLeft() {
                                     href="#"
                                     className={classNames(
                                         active ? 'bg-none text-white' : 'text-white',
-                                        'block px-4 py-2 text-sm'
+                                        'block px-2 py-1 text-sm'
                                     )}
                                 >
                                     Support
@@ -66,7 +66,7 @@ function NavbarLeft() {
                                     href="#"
                                     className={classNames(
                                         active ? 'bg-none text-white' : 'text-white',
-                                        'block px-4 py-2 text-sm'
+                                        'block px-2 py-1 text-sm'
                                     )}
                                 >
                                     License
@@ -80,7 +80,7 @@ function NavbarLeft() {
                                         type="submit"
                                         className={classNames(
                                             active ? 'bg-none text-white' : 'text-white',
-                                            'block w-full px-4 py-2 text-left text-sm'
+                                            'block w-full px-2 py-1 text-left text-sm'
                                         )}
                                     >
                                         Sign out

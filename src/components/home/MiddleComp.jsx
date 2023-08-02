@@ -15,7 +15,7 @@ const MiddleComp = () => {
             GRAND X HOTEL
         </div>
         <div
-            className='grid grid-cols-4 grid-rows-1 gap-7 w-1/2 mt-10 mb-64 m-auto h-80 text-xl font-sans font-extralight'>
+            className='grid grid-cols-4 grid-rows-1 gap-7 w-10/12 mt-10 mb-64 m-auto h-80 text-xl font-sans font-extralight'>
             <div className="grid-item m-auto w-auto">
                 <Datepick/>
             </div>
