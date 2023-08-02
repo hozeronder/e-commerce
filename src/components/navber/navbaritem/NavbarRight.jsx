@@ -11,7 +11,7 @@ function NavbarRight() {
     useEffect(() => {
         dispatch(getCartTotal())
     }, [dispatch])
-    return (<div className='items-center sm:gap-8 gap-5 flex'>
+    return (<div className='items-center sm:gap-8 gap-5 flex float-right'>
 
         <div>
             OUR LOCATIONS
