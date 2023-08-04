@@ -1,44 +1,32 @@
 import React, {useState} from "react";
-import Datepicker from "react-tailwindcss-datepicker";
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 const App = () => {
-    const [value, setValue] = useState({
-        startDate: new Date(),
-        endDate: new Date().setMonth(11)
-    });
+    const today = new Date();
+    const [dateRange, setDateRange] = useState([null, null]);
+    const [startDate, endDate] = dateRange;
 
-    const handleValueChange = (newValue) => {
-        setValue(newValue);
-    }
+    const onChange = (dates) => {
+        setDateRange(dates);
+    };
 
-
-    function getCurrentDate(separator = '-') {
-
-        let newDate = new Date()
-        let date = newDate.getDate() - 1;
-        let month = newDate.getMonth() + 1;
-        let year = newDate.getFullYear();
-
-        return `${year}${separator}${month < 10 ? `0${month}` : `${month}`}${separator}${date}`
-    }
-
-    let dateCurrent;
-    dateCurrent = getCurrentDate();
+    const filterPassedDates = (date) => {
+        return date.getTime() >= today.getTime() || date.toDateString() === today.toDateString();
+    };
 
     return (
-        <Datepicker
-            disabledDates={[
-                {
-                    startDate: "1990-02-02",
-                    endDate: dateCurrent,
-                }]}
-            startWeekOn="mon"
-            value={value}
-            onChange={handleValueChange}
-            primaryColor={"teal"}
-            containerClassName="datepicker"
+        <DatePicker
+            selectsRange={true}
+            startDate={startDate}
+            endDate={endDate}
+            onChange={onChange}
+            withPortal
+            filterDate={filterPassedDates}
+            calendarStartDay="1"
+            placeholderText="DATES"
         />
     );
 };
+
 export default App;

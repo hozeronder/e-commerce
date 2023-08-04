@@ -3,21 +3,18 @@ import {useNavigate} from "react-router-dom";
 import {Fragment} from 'react'
 import {Menu, Transition} from '@headlessui/react'
 import {ChevronDownIcon} from '@heroicons/react/20/solid'
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
+import {hover} from "@testing-library/user-event/dist/hover";
 
 function NavbarLeft() {
 
     const navigate = useNavigate()
 
-    return (<Menu as="div" className="relative inline-block text-left">
-            <div>
+    return (<Menu as="div">
+            <div className="">
                 <Menu.Button
-                    className="flex md:inline-flex md:justify-center gap-x-1.5 rounded-md ">
+                    className="flex gap-x-1.5 rounded-md">
                     MENU
-                    <ChevronDownIcon className="-mr-1 h-5 w-5 text-white" aria-hidden="true"/>
+                    <ChevronDownIcon className="-mr-1 h-5 w-5" aria-hidden="true"/>
                 </Menu.Button>
             </div>
 
@@ -32,60 +29,47 @@ function NavbarLeft() {
                 className="bg-white bg-opacity-20"
             >
                 <Menu.Items
-                    className="absolute left-0 z-10 mt-6 min-[800px]:mt-10 w-28 origin-top-right rounded-md text-white">
+                    className="absolute left-50 z-10 mt-1 w-26 origin-top-right rounded-md">
                     <div className="py-1">
                         <Menu.Item>
-                            {({active}) => (
-                                <a
-                                    href="#"
-                                    className={classNames(
-                                        active ? 'bg-none text-white' : 'text-white',
-                                        'block px-2 py-1'
-                                    )}
-                                >
-                                    Account settings
-                                </a>
-                            )}
+                            <a
+                                href="#"
+                                className='block px-2 py-1 tracking-widest font-sans font-extralight text-sm'
+                            >
+                                ACCOUNT
+                            </a>
+
                         </Menu.Item>
                         <Menu.Item>
-                            {({active}) => (
-                                <a
-                                    href="#"
-                                    className={classNames(
-                                        active ? 'bg-none text-white' : 'text-white',
-                                        'block px-2 py-1 text-sm'
-                                    )}
-                                >
-                                    Support
-                                </a>
-                            )}
+
+                            <a
+                                href="#"
+                                className='block px-2 py-1 tracking-widest font-sans font-extralight text-sm'
+                            >
+                                SUPPORT
+                            </a>
+
                         </Menu.Item>
                         <Menu.Item>
-                            {({active}) => (
-                                <a
-                                    href="#"
-                                    className={classNames(
-                                        active ? 'bg-none text-white' : 'text-white',
-                                        'block px-2 py-1 text-sm'
-                                    )}
-                                >
-                                    License
-                                </a>
-                            )}
+
+                            <a
+                                href="#"
+                                className='block px-2 py-1 tracking-widest font-sans font-extralight text-sm'
+                            >
+                                LICENSE
+                            </a>
+
                         </Menu.Item>
                         <form method="POST" action="#">
                             <Menu.Item>
-                                {({active}) => (
-                                    <button
-                                        type="submit"
-                                        className={classNames(
-                                            active ? 'bg-none text-white' : 'text-white',
-                                            'block w-full px-2 py-1 text-left text-sm'
-                                        )}
-                                    >
-                                        Sign out
-                                    </button>
-                                )}
+
+                                <button
+                                    type="submit"
+                                    className='block px-2 py-1 tracking-widest font-sans font-extralight text-sm'
+                                >
+                                    SIGN OUT
+                                </button>
+
                             </Menu.Item>
                         </form>
                     </div>

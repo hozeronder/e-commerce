@@ -11,13 +11,13 @@ function NavbarRight() {
     useEffect(() => {
         dispatch(getCartTotal())
     }, [dispatch])
-    return (<div className='items-center sm:gap-8 gap-5 flex float-right'>
+    return (<div className='flex justify-around sm:gap-8 gap-5'>
 
         <div>
-            OUR LOCATIONS
+            ROOMS
         </div>
-        <div onClick={() => navigate("cart")} className='relative cursor-pointer'>
-                BOOK NOW
+        <div onClick={() => navigate("cart")} className='cursor-pointer'>
+            CONTACT
         </div>
 
     </div>)
