@@ -13,7 +13,8 @@ body {
 body::-webkit-scrollbar {
     display: none;
 }
-.navright{
+
+.navright {
     display: compact;
 
 }
@@ -29,15 +30,18 @@ body::-webkit-scrollbar {
     -o-background-size: cover;
     opacity: 85%;
 }
-.datepicker{
-    background-color: rgba(255,255,255,0);
+
+.datepicker {
+    background-color: rgba(255, 255, 255, 0);
     opacity: 75%;
     color: white;
 }
+
 .line {
     border-bottom: 1px solid #888;
 }
-.buttongo{
+
+.buttongo {
     border: 5px;
 }
 
@@ -69,22 +73,43 @@ body::-webkit-scrollbar {
     'GRAD' 0,
     'opsz' 48
 }
-.react-datepicker__input-container input{
+
+.react-datepicker__input-container input::placeholder {
+    width: 50px;
+    text-decoration-color: white;
+    color: white;
+}
+
+.react-datepicker__input-container input {
     background-color: transparent;
-    background-blend-mode: multiply;
-    width: 250px;
-    font-size: 13px;
+    width: 200px;
+    font-size: 15px;
+    text-align: -webkit-center;
+    margin: auto;
 
 }
+
 @media screen and (min-width: 1000px) {
     .react-datepicker__input-container input {
         font-size: 17px;
+        width: 205px;
+        text-align: -webkit-center;
     }
-    .rooms{
-        font-size: 17px;
 
+    .rooms {
+        font-size: 17px;
     }
 }
+
 .rooms {
     font-size: 17px;
+}
+
+@media screen and (max-width: 1000px) {
+    .roomButton {
+        transform: scale(0.7);
+        margin-top: 75px;
+        margin-left: -30px;
+
+    }
 }
