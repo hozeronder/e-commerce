@@ -3,6 +3,8 @@ import Datepick from "./Datepick";
 import {Fragment} from 'react';
 import {Menu, Transition} from '@headlessui/react';
 import {ChevronDownIcon} from '@heroicons/react/20/solid';
+import Wheelpick from "./Wheelpick";
+import Wheelpick2 from "./Wheelpick2";
 
 const MiddleComp = () => {
     const numbers = Array.from({length: 10}, (_, index) => index + 1);
@@ -94,7 +96,12 @@ const MiddleComp = () => {
                             )}
                         </Menu>
                     </div>
-                    <div className="grid-item m-auto ">Adults/Children</div>
+
+                    <div className="m-auto flex items-center content-center -mt-12">
+                        <Wheelpick></Wheelpick>
+                        <div className="">Adults/Children</div>
+                        <Wheelpick2></Wheelpick2>
+                    </div>
                     <div className="grid-item m-auto">
                         <button className=" buttongo">LET`S GO</button>
                     </div>
