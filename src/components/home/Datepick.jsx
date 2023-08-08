@@ -38,6 +38,7 @@ const  App = () => {
                     calendarStartDay="1"
                     placeholderText="DATES"
                     open={isDatePickerOpen}
+
                 />
                 {!isDatePickerOpen && (
                     <ChevronDownIcon

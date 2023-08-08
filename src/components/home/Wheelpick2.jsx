@@ -1,4 +1,5 @@
 import WheelPicker from 'react-simple-wheel-picker';
+import React from "react";
 
 const data = [
     {
@@ -49,23 +50,30 @@ const data = [
 
 const Wheelpick2 = () => {
     const handleOnChange = target => {
-        console.log(target);
     };
-    return (
-        <WheelPicker
-            data={data}
-            onChange={handleOnChange}
-            height={100}
-            width={50}
-            titleText="Enter value same as aria-label"
-            itemHeight={30}
-            selectedID={data[0].id}
-            color="rgba(255,255,255,0.2"
-            activeColor="rgba(255,255,255)"
-            backgroundColor="transparent"
-            shadowColor="transparent"
 
-        />
+    const handleOnWheel = event => {
+        event.preventDefault();
+    };
+
+    return (<>
+            <div onWheel={handleOnWheel}> {/* Tüm bileşenin etrafına bir div ekleyin */}
+                <WheelPicker
+                    data={data}
+                    onChange={handleOnChange}
+                    height={100}
+                    width={50}
+                    titleText="Enter value same as aria-label"
+                    itemHeight={30}
+                    selectedID={data[0].id}
+                    color="rgba(255,255,255,0.2"
+                    activeColor="rgba(255,255,255)"
+                    backgroundColor="transparent"
+                    shadowColor="transparent"
+                    aria-activedescendant="wheel-picker-option-1"
+                />
+            </div>
+        </>
     );
 };
 

@@ -163,10 +163,10 @@ const MiddleComp = () => {
                             )}
                         </Menu>
                     </div>
-                    <div className="m-auto flex items-center content-center ">
-                        <Wheelpick></Wheelpick>
+                    <div className="h-80 w-36 m-auto flex items-center content-center ">
+                        <Wheelpick/>
                         <div>Adults/Children</div>
-                        <Wheelpick2></Wheelpick2>
+                        <Wheelpick2/>
                     </div>
                     <div className="grid-item m-auto">
                         <button className="buttongo">LET`S GO</button>

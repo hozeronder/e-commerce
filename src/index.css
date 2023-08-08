@@ -78,15 +78,15 @@ body::-webkit-scrollbar {
     width: 50px;
     text-decoration-color: white;
     color: white;
+    margin: auto;
 }
 
 .react-datepicker__input-container input {
     background-color: transparent;
     width: 200px;
     font-size: 15px;
-    text-align: -webkit-center;
     margin: auto;
-
+    text-align: center;
 }
 
 @media screen and (min-width: 1000px) {
@@ -115,5 +115,23 @@ body::-webkit-scrollbar {
 
 .sc-bxivhb span {
     display: none;
-    overflow: hidden;
+    overflow-anchor: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sc-bxivhb::-webkit-scrollbar {
+    display: none;
+    overflow-anchor: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.sc-bxivhb {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-anchor: none;
+    margin: 0;
+    padding: 0;
 }
