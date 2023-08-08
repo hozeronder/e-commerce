@@ -110,6 +110,10 @@ body::-webkit-scrollbar {
         transform: scale(0.7);
         margin-top: 75px;
         margin-left: -30px;
-
     }
+}
+
+.sc-bxivhb span {
+    display: none;
+    overflow: hidden;
 }

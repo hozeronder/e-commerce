@@ -64,6 +64,7 @@ const Wheelpick2 = () => {
             activeColor="rgba(255,255,255)"
             backgroundColor="transparent"
             shadowColor="transparent"
+
         />
     );
 };
