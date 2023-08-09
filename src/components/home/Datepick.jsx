@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import {ChevronDownIcon} from "@heroicons/react/20/solid";
+import {tr} from "date-fns/locale";
 
 
-const  App = () => {
-    const today = new Date();
+const App = () => {
+
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
     const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
@@ -14,14 +15,6 @@ const  App = () => {
         setDateRange(dates);
         setIsDatePickerOpen(false);
     };
-
-    const filterPassedDates = (date) => {
-        return (
-            date.getTime() >= today.getTime() ||
-            date.toDateString() === today.toDateString()
-        );
-    };
-
     return (
         <div className="flex items-center">
             <div
@@ -34,11 +27,10 @@ const  App = () => {
                     endDate={endDate}
                     onChange={onChange}
                     withPortal
-                    filterDate={filterPassedDates}
                     calendarStartDay="1"
                     placeholderText="DATES"
-                    open={isDatePickerOpen}
-
+                    allowSameDay={true}
+                    minDate={new Date()}
                 />
                 {!isDatePickerOpen && (
                     <ChevronDownIcon
