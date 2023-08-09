@@ -43,8 +43,16 @@ body::-webkit-scrollbar {
 
 .buttongo {
     border: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 50rem;
 }
-
+.buttongo:hover {
+    border: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 5px 10px;
+    border-radius: 50rem;
+}
 
 .paginate {
     display: flex;
@@ -127,11 +135,26 @@ body::-webkit-scrollbar {
     padding: 0;
 }
 
-
 .sc-bxivhb {
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-anchor: none;
-    margin: 0;
+    margin: auto;
     padding: 0;
+    text-align: center;
+    text-align-all: center;
+    display: block;
+}
+
+.wheelpicker ul {
+    padding: 0;
+    margin: 0;
+}
+
+.diFZYU {
+    font-size: 20px !important;
+    padding: 0 !important;
+    margin: auto !important;
+    margin-top: 10% !important;
+
 }

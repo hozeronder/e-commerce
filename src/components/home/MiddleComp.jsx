@@ -103,7 +103,7 @@ const MiddleComp = () => {
                         <Wheelpick2></Wheelpick2>
                     </div>
                     <div className="grid-item m-auto">
-                        <button className=" buttongo">LET`S GO</button>
+                        <button className=" buttongo">SEARCH</button>
                     </div>
                 </div>
 
@@ -113,11 +113,11 @@ const MiddleComp = () => {
                     GRAND X HOTEL
                 </div>
                 <div
-                    className='grid grid-cols-4 grid-rows-1 gap-6 w-8/12 mt-10 mb-64 m-auto h-80 text-xl font-sans font-extralight'>
+                    className='grid grid-cols-4 grid-rows-1 gap-6 w-6/12 mt-10 mb-64 m-auto h-80 text-xl font-sans font-extralight'>
                     <div className="grid-item m-auto w-56">
                         <Datepick className="bg-none"/>
                     </div>
-                    <div className="relative flex items-center">
+                    <div className="relative flex items-center ml-8">
                         <Menu>
                             {({open}) => (
                                 <>
@@ -163,13 +163,13 @@ const MiddleComp = () => {
                             )}
                         </Menu>
                     </div>
-                    <div className="h-80 w-36 m-auto flex items-center content-center ">
+                    <div className="h-80 w-36 m-auto -ml-8 flex items-center content-center ">
                         <Wheelpick/>
                         <div>Adults/Children</div>
                         <Wheelpick2/>
                     </div>
                     <div className="grid-item m-auto">
-                        <button className="buttongo">LET`S GO</button>
+                        <button className="buttongo">SEARCH</button>
                     </div>
                 </div>
             </>

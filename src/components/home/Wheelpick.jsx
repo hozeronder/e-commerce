@@ -1,7 +1,7 @@
 import React from 'react';
 import WheelPicker from 'react-simple-wheel-picker';
 
-const data = [ {
+const data = [{
     id: '1',
     value: '0'
 },
@@ -48,30 +48,26 @@ const data = [ {
 ];
 const Wheelpick = () => {
     const handleOnChange = target => {
+        console.log(target)
     };
 
-    const handleOnWheel = event => {
-        event.preventDefault();
-    };
+    return (<div className="wheelpicker">
+            <WheelPicker
+                data={data}
+                onChange={handleOnChange}
+                height={100}
+                width={50}
+                titleText="Enter value same as aria-label"
+                itemHeight={30}
+                selectedID={data[2].id}
+                color="rgba(255,255,255,0.2"
+                activeColor="rgba(255,255,255)"
+                backgroundColor="transparent"
+                shadowColor="transparent"
+                aria-activedescendant="wheel-picker-option-1"
 
-    return (<>
-            <div onWheel={handleOnWheel}> {/* Tüm bileşenin etrafına bir div ekleyin */}
-                <WheelPicker
-                    data={data}
-                    onChange={handleOnChange}
-                    height={100}
-                    width={50}
-                    titleText="Enter value same as aria-label"
-                    itemHeight={30}
-                    selectedID={data[2].id}
-                    color="rgba(255,255,255,0.2"
-                    activeColor="rgba(255,255,255)"
-                    backgroundColor="transparent"
-                    shadowColor="transparent"
-                    aria-activedescendant="wheel-picker-option-1"
-                />
-            </div>
-        </>
+            />
+        </div>
     );
 };
 
