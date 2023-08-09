@@ -87,6 +87,7 @@ body::-webkit-scrollbar {
     text-decoration-color: white;
     color: white;
     margin: auto;
+    text-align: left;
 }
 
 .react-datepicker__input-container input {
