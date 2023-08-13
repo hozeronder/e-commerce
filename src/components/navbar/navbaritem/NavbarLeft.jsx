@@ -1,20 +1,19 @@
-import React from 'react'
-import {useNavigate} from "react-router-dom";
-import {Fragment} from 'react'
-import {Menu, Transition} from '@headlessui/react'
-import {ChevronDownIcon} from '@heroicons/react/20/solid'
-import {hover} from "@testing-library/user-event/dist/hover";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Fragment } from "react";
+import { Menu, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { hover } from "@testing-library/user-event/dist/hover";
 
 function NavbarLeft() {
+    const navigate = useNavigate();
 
-    const navigate = useNavigate()
-
-    return (<Menu as="div">
+    return (
+        <Menu as="div">
             <div className="">
-                <Menu.Button
-                    className="flex gap-x-1.5 rounded-md">
+                <Menu.Button className="flex gap-x-1.5 rounded-md">
                     MENU
-                    <ChevronDownIcon className="-mr-1 h-5 w-5" aria-hidden="true"/>
+                    <ChevronDownIcon className="-mr-1 h-5 w-5" aria-hidden="true" />
                 </Menu.Button>
             </div>
 
@@ -28,55 +27,35 @@ function NavbarLeft() {
                 leaveTo="transform opacity-0 scale-95"
                 className="bg-white bg-opacity-20"
             >
-                <Menu.Items
-                    className="absolute left-50 z-10 mt-1 w-26 origin-top-right rounded-md">
+                <Menu.Items className="absolute left-50 z-10 mt-1 w-26 origin-top-right rounded-md">
                     <div className="py-1">
                         <Menu.Item>
-                            <a
-                                href="#"
-                                className='block px-2 py-1 tracking-widest font-sans font-extralight text-sm'
-                            >
+                            <a href="#" className="block px-2 py-1 tracking-widest font-sans font-extralight text-sm">
                                 ACCOUNT
                             </a>
-
                         </Menu.Item>
                         <Menu.Item>
-
-                            <a
-                                href="#"
-                                className='block px-2 py-1 tracking-widest font-sans font-extralight text-sm'
-                            >
+                            <a href="#" className="block px-2 py-1 tracking-widest font-sans font-extralight text-sm">
                                 SUPPORT
                             </a>
-
                         </Menu.Item>
                         <Menu.Item>
-
-                            <a
-                                href="#"
-                                className='block px-2 py-1 tracking-widest font-sans font-extralight text-sm'
-                            >
+                            <a href="#" className="block px-2 py-1 tracking-widest font-sans font-extralight text-sm">
                                 LICENSE
                             </a>
-
                         </Menu.Item>
                         <form method="POST" action="#">
                             <Menu.Item>
-
-                                <button
-                                    type="submit"
-                                    className='block px-2 py-1 tracking-widest font-sans font-extralight text-sm'
-                                >
+                                <button type="submit" className="block px-2 py-1 tracking-widest font-sans font-extralight text-sm">
                                     SIGN OUT
                                 </button>
-
                             </Menu.Item>
                         </form>
                     </div>
                 </Menu.Items>
             </Transition>
         </Menu>
-    )
+    );
 }
 
-export default NavbarLeft
+export default NavbarLeft;
