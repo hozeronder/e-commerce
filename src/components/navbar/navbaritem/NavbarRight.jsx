@@ -15,8 +15,7 @@ function NavbarRight() {
     return (
         <div className="flex justify-around sm:gap-8 gap-5">
             <AnchorLink href='#rooms'>ROOMS</AnchorLink>
-            <AnchorLink href='#rooms'>
-                CONTACT</AnchorLink>
+            <AnchorLink href='#contact'>CONTACT</AnchorLink>
         </div>
     );
 }
