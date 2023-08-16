@@ -76,8 +76,9 @@ body::-webkit-scrollbar {
 .roomButton {
     transform: scale(1);
     margin-top: 90px;
-margin-left: -25px;
+    margin-left: -19px;
 }
+
 .roomButton2 {
     transform: scale(1);
     margin-top: 90px;
@@ -145,7 +146,7 @@ margin-left: -25px;
 }
 
 .adress {
-padding-left: 1rem;
+    padding-left: 1rem;
     text-align: left;
     font-size: small;
     margin-left: auto;
