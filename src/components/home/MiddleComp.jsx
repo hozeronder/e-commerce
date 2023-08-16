@@ -81,13 +81,13 @@ const MiddleComp = () => {
                                 >
                                     <Menu.Items static>
                                         <button onClick={decrementRoom}
-                                                className="p-4 font-normal text-center rounded-full text-white bg-white bg-opacity-20">
+                                                className="p-3 font-normal text-center rounded-full text-white bg-white bg-opacity-20">
                                             -
                                         </button>
                                         <span
                                             className="p-4 text-center text-white">{selectedRoom.toString().padStart(2, "0")}</span>
                                         <button onClick={incrementRoom}
-                                                className="p-4 font-normal text-center rounded-full text-white bg-white bg-opacity-20 ">
+                                                className="p-3 font-normal text-center rounded-full text-white bg-white bg-opacity-20 ">
                                             +
                                         </button>
                                     </Menu.Items>
@@ -137,18 +137,18 @@ const MiddleComp = () => {
                                     leave="transition ease-in duration-75"
                                     leaveFrom="transform opacity-100 scale-100"
                                     leaveTo="transform opacity-0 scale-95"
-                                    className="absolute roomButton"
+                                    className="absolute roomButton2"
                                 >
                                     <Menu.Items static>
-                                        <div className="relative font-normal flex items-center">
+                                        <div className="flex items-center">
                                             <button onClick={decrementRoom}
                                                     className="p-4 text-center rounded-full text-white bg-white bg-opacity-20">
                                                 -
                                             </button>
                                             <span
-                                                className="p-4 text-center text-white flex-1">{selectedRoom.toString().padStart(2, "0")}</span>
+                                                className="p-4 flex text-center text-white">{selectedRoom.toString().padStart(2, "0")}</span>
                                             <button onClick={incrementRoom}
-                                                    className="p-4 font-normal text-center rounded-full text-white bg-white bg-opacity-20 ">
+                                                    className="p-4 flex rounded-full text-white bg-white bg-opacity-20 ">
                                                 +
                                             </button>
                                         </div>
