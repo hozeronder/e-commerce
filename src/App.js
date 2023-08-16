@@ -6,6 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Cart from "./pages/Cart";
 import {Search} from "./pages/Search";
+import Footer from "./components/footer/Footer";
 
 function App() {
     return (<div>
@@ -18,6 +19,7 @@ function App() {
                         <Route path="/products/search" element={<Search/>}/>
                     </Routes>
                 </Router>
+                <Footer/>
             </PageContainer>
 
         </div>);

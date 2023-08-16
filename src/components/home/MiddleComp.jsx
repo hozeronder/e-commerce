@@ -7,6 +7,7 @@ import Wheelpick from "./Wheelpick";
 import Wheelpick2 from "./Wheelpick2";
 import Product from "./Product";
 import Footer from "../footer/Footer";
+import SimpleMap from "../footer/maps";
 
 const MiddleComp = () => {
     const numbers = Array.from({length: 10}, (_, index) => index + 1);
@@ -24,7 +25,7 @@ const MiddleComp = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     const handleResize = () => {
-        setIsSmallScreen(window.innerWidth < 800);
+        setIsSmallScreen(window.innerWidth < 1500);
     };
 
     useEffect(() => {
@@ -50,7 +51,9 @@ const MiddleComp = () => {
 
     return isSmallScreen ? (
         <>
-            <div className="text-4xl font-extralight block text-center m-auto w-auto h-0 mt-32 ">GRAND X HOTEL</div>
+            <div className="grandx text-6xl opacity-40 font-extrabold block text-center m-auto w-auto h-0 mt-32 ">GRAND
+                X HOTEL
+            </div>
             <div
                 className="grid grid-cols-1 grid-rows-1 gap-6 w-8/12 mt-10 mb-64 m-auto h-80 text-xl font-sans font-extralight">
                 <div className="grid-item m-auto w-56">
@@ -60,8 +63,8 @@ const MiddleComp = () => {
                     <Menu>
                         {({open}) => (
                             <>
-                                <Menu.Button onClick={toggleMenu} className="rooms flex gap-x-1.5 rounded-md">
-                                    ROOMS
+                                <Menu.Button onClick={toggleMenu} className="font-normal flex gap-x-1.5 rounded-md">
+                                    Rooms
                                     <ChevronDownIcon className="-mr-1 h-5 w-5 mt-1" aria-hidden="true"/>
                                 </Menu.Button>
 
@@ -78,13 +81,13 @@ const MiddleComp = () => {
                                 >
                                     <Menu.Items static>
                                         <button onClick={decrementRoom}
-                                                className="p-4 text-center rounded-full text-white bg-white bg-opacity-20">
+                                                className="p-4 font-normal text-center rounded-full text-white bg-white bg-opacity-20">
                                             -
                                         </button>
                                         <span
                                             className="p-4 text-center text-white">{selectedRoom.toString().padStart(2, "0")}</span>
                                         <button onClick={incrementRoom}
-                                                className="p-4 text-center rounded-full text-white bg-white bg-opacity-20 ">
+                                                className="p-4 font-normal text-center rounded-full text-white bg-white bg-opacity-20 ">
                                             +
                                         </button>
                                     </Menu.Items>
@@ -96,31 +99,33 @@ const MiddleComp = () => {
 
                 <div className="m-auto flex items-center content-center -mt-12">
                     <Wheelpick></Wheelpick>
-                    <div className="">Adults/Children</div>
+                    <div className="font-normal">Adults/Children</div>
                     <Wheelpick2></Wheelpick2>
                 </div>
                 <div className="grid-item m-auto">
-                    <button className=" buttongo">SEARCH</button>
+                    <button className="font-normal buttongo">SEARCH</button>
                 </div>
             </div>
-                <Product isSmallScreen={isSmallScreen}></Product>
-            <Footer isSmallScreen={isSmallScreen}></Footer>
+            <Product isSmallScreen={isSmallScreen}></Product>
         </>
     ) : (
         <>
-            <div className="text-7xl font-extralight block text-center m-auto w-auto h-0 mt-40 ">GRAND X HOTEL</div>
             <div
-                className="grid grid-cols-4 grid-rows-1 gap-6 w-6/12 mt-10 mb-64 m-auto h-80 text-xl font-sans font-extralight">
+                className="grandx text-8xl opacity-40 tracking-widest font-extrabold text-center m-auto w-auto h-0 mt-40 ">GRAND
+                X HOTEL
+            </div>
+            <div
+                className="grid grid-cols-4 grid-rows-1  w-1/2 mt-10 mb-64 m-auto h-80 text-xl font-sans font-extralight">
                 <div className="grid-item m-auto w-56">
                     <Datepick className="bg-none"/>
                 </div>
-                <div className="relative flex items-center ml-8">
+                <div className="relative flex justify-center items-center">
                     <Menu>
                         {({open}) => (
                             <>
-                                <Menu.Button onClick={toggleMenu} className="rooms flex gap-x-1.5 rounded-md">
-                                    ROOMS
-                                    <ChevronDownIcon className="-mr-1 h-5 w-5 mt-1" aria-hidden="true"/>
+                                <Menu.Button onClick={toggleMenu} className="font-normal flex gap-x-1.5 rounded-md">
+                                    Rooms
+                                    <ChevronDownIcon className="-pr-1 h-5 w-5 mt-1" aria-hidden="true"/>
                                 </Menu.Button>
 
                                 <Transition
@@ -132,10 +137,10 @@ const MiddleComp = () => {
                                     leave="transition ease-in duration-75"
                                     leaveFrom="transform opacity-100 scale-100"
                                     leaveTo="transform opacity-0 scale-95"
-                                    className="absolute -left-8 top-44 w-26 roomButton"
+                                    className="absolute roomButton"
                                 >
                                     <Menu.Items static>
-                                        <div className="relative flex items-center">
+                                        <div className="relative font-normal flex items-center">
                                             <button onClick={decrementRoom}
                                                     className="p-4 text-center rounded-full text-white bg-white bg-opacity-20">
                                                 -
@@ -143,7 +148,7 @@ const MiddleComp = () => {
                                             <span
                                                 className="p-4 text-center text-white flex-1">{selectedRoom.toString().padStart(2, "0")}</span>
                                             <button onClick={incrementRoom}
-                                                    className="p-4 text-center rounded-full text-white bg-white bg-opacity-20 ">
+                                                    className="p-4 font-normal text-center rounded-full text-white bg-white bg-opacity-20 ">
                                                 +
                                             </button>
                                         </div>
@@ -153,17 +158,16 @@ const MiddleComp = () => {
                         )}
                     </Menu>
                 </div>
-                <div className="h-80 w-36 m-auto -ml-8 flex items-center content-center ">
+                <div className="h-80 w-36 m-auto flex items-center content-center">
                     <Wheelpick/>
-                    <div>Adults/Children</div>
+                    <div className="font-normal">Adults/Children</div>
                     <Wheelpick2/>
                 </div>
-                <div className="grid-item m-auto">
-                    <button className="buttongo">SEARCH</button>
+                <div className="items-center justify-center content-center my-auto ml-32">
+                    <button className="buttongo font-normal">SEARCH</button>
                 </div>
             </div>
-                <Product isSmallScreen={isSmallScreen}></Product>
-            <Footer isSmallScreen={isSmallScreen}></Footer>
+            <Product isSmallScreen={isSmallScreen}></Product>
         </>
     );
 };

@@ -10,7 +10,7 @@ function NavbarLeft() {
 
     return (
         <Menu as="div">
-            <div className="">
+            <div>
                 <Menu.Button className="flex gap-x-1.5 rounded-md">
                     MENU
                     <ChevronDownIcon className="-mr-1 h-5 w-5" aria-hidden="true" />

@@ -16,7 +16,7 @@ const App = () => {
         setIsDatePickerOpen(false);
     };
     return (
-        <div className="flex items-center">
+        <div className="font-normal flex items-center p-0">
             <div
                 className="relative"
                 onClick={() => setIsDatePickerOpen((prevState) => !prevState)}
@@ -28,7 +28,7 @@ const App = () => {
                     onChange={onChange}
                     withPortal
                     calendarStartDay="1"
-                    placeholderText="DATES"
+                    placeholderText="Dates"
                     allowSameDay={true}
                     minDate={new Date()}
                 />

@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    font-weight: lighter;
+    font-family: 'Nunito Sans', 'Barlow Semi Condensed', sans-serif;
     color: white;
+    font-size: medium;
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -14,26 +14,18 @@ body::-webkit-scrollbar {
     display: none;
 }
 
-.navright {
-    display: compact;
-
-}
-
 .bgimage {
-    background: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.25)), url(../public/assets/sea.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.25)), url(../public/assets/sea.png);
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    opacity: 85%;
+    opacity: 0.85;
 }
 
 .datepicker {
-    background-color: rgba(255, 255, 255, 0);
-    opacity: 75%;
+    background-color: transparent;
+    opacity: 0.75;
     color: white;
 }
 
@@ -41,23 +33,16 @@ body::-webkit-scrollbar {
     border-bottom: 1px solid #888;
 }
 
-.buttongo {
-    border: 5px;
+.buttongo, .buttongo:hover {
     background-color: rgba(255, 255, 255, 0.2);
     padding: 5px 10px;
-    border-radius: 50rem;
-}
-.buttongo:hover {
-    border: 5px;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 5px 10px;
-    border-radius: 50rem;
+    border-radius: 30rem;
 }
 
 .paginate {
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .paginate li {
@@ -68,86 +53,43 @@ body::-webkit-scrollbar {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .background-footer {
-    background-color: white;
-    opacity: 10%;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0,
-    'wght' 300,
-    'GRAD' 0,
-    'opsz' 48
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
 }
 
-.react-datepicker__input-container input::placeholder {
-    width: 50px;
+.react-datepicker__input-container input::placeholder,
+.react-datepicker__input-container input {
+    width: 250px;
     text-decoration-color: white;
     color: white;
-    margin: auto;
     text-align: left;
-    padding-left: 15px;
-}
-
-.react-datepicker__input-container input {
     background-color: transparent;
-    width: 200px;
-    font-size: 15px;
-    margin: auto;
-    text-align: center;
-    margin-left: 10px;
-}
-
-@media screen and (min-width: 1000px) {
-    .react-datepicker__input-container input {
-        font-size: 17px;
-        width: 205px;
-        text-align: -webkit-center;
-    }
-
-    .rooms {
-        font-size: 17px;
-    }
-}
-
-.rooms {
-    font-size: 17px;
 }
 
 @media screen and (max-width: 1000px) {
     .roomButton {
         transform: scale(0.7);
-        margin-top: 75px;
-        margin-left: -30px;
+        margin-left: 7px;
     }
 }
 
-.sc-bxivhb span {
+.roomButton {
+    transform: scale(1);
+    margin-top: 90px;
+    margin-left: -20px;
+}
+
+.sc-bxivhb span, .sc-bxivhb::-webkit-scrollbar, .sc-bxivhb {
     display: none;
     overflow-anchor: none;
     margin: 0;
     padding: 0;
-}
-
-.sc-bxivhb::-webkit-scrollbar {
-    display: none;
-    overflow-anchor: none;
-    margin: 0;
-    padding: 0;
-}
-
-.sc-bxivhb {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow-anchor: none;
-    margin: auto;
-    padding: 0;
-    text-align: center;
-    text-align-all: center;
-    display: block;
 }
 
 .wheelpicker ul {
@@ -160,14 +102,13 @@ body::-webkit-scrollbar {
     padding: 0 !important;
     margin: auto !important;
     margin-top: 10% !important;
-
 }
 
 .product-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    width: auto;
 }
 
 @media (max-width: 800px) {
@@ -175,5 +116,107 @@ body::-webkit-scrollbar {
         display: flex;
         flex-direction: row;
         align-items: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .grandx {
+        font-size: xx-large;
+    }
+
+    .footer {
+        height: 24rem;
+        margin: auto;
+        width: 100%;
+        padding: 0;
+        border-radius: 1rem;
+        float: none;
+        margin-bottom: 2rem;
+    }
+}
+
+.footer {
+    height: 24rem;
+    margin: auto;
+    width: 80%;
+    padding: 0;
+    border-radius: 1rem;
+    float: none;
+    margin-bottom: 2rem;
+}
+
+.adress {
+padding-left: 1rem;
+    text-align: left;
+    font-size: small;
+    margin-left: auto;
+}
+
+.middleinfo {
+    padding-right: 1rem;
+    text-align: right;
+    font-size: small;
+    margin-right: auto;
+}
+
+.maps {
+    width: 600px;
+    height: auto;
+}
+
+.layout {
+    display: flex;
+    justify-content: space-around;
+}
+
+.grow1 {
+    margin-top: 45px;
+    flex: 1;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+.grow2 {
+    margin-top: 45px;
+    flex: 1;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+@media (max-width: 1150px) {
+    .grow2 {
+        display: none;
+    }
+
+    .grow1 {
+        margin: 1rem 0;
+    }
+
+    .layout {
+        text-align: -webkit-center;
+        justify-content: center;
+        justify-items: center;
+        margin-top: 3rem;
+    }
+
+    .footer {
+        width: 90%;
+        height: 20%;
+    }
+
+    .adress {
+        width: 10rem;
+        text-align: left;
+        font-size: small;
+        margin-left: auto;
+    }
+
+    .middleinfo {
+        width: 10rem;
+        text-align: right;
+        font-size: small;
+        margin-right: auto;
     }
 }
