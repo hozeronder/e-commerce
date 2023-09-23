@@ -1,284 +1,111 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import axios from "axios";
 
 const Product = ({isSmallScreen}) => {
-    const navigate = useNavigate();
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('http://localhost/e-commerce-backend/rooms.php');
+            setData(response.data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
 
     return isSmallScreen ? (
         <>
             <div id="rooms" className="product-container">
-                <div
-                    className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
-                    <div className="card">
-                        <Carousel showThumbs={false}>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg"
-                                     alt="Image 1"/>
-                                <p className="legend">Corner Suites</p>
+                {data.map((item, index) => (
+                    <div key={index}
+                         className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
+                        <div className="card">
+                            <Carousel showThumbs={false}>
+                                {item.photo1 && (
+                                    <div>
+                                        <img className="rounded-xl" src={item.photo1} alt={`Image 1`}/>
+                                        <p className="legend">Photo 1 Caption</p>
+                                    </div>
+                                )}
+                                {item.photo2 && (
+                                    <div>
+                                        <img className="rounded-xl" src={item.photo2} alt={`Image 2`}/>
+                                        <p className="legend">Photo 2 Caption</p>
+                                    </div>
+                                )}
+                                {item.photo3 && (
+                                    <div>
+                                        <img className="rounded-xl" src={item.photo3} alt={`Image 3`}/>
+                                        <p className="legend">Photo 3 Caption</p>
+                                    </div>
+                                )}
+                                {item.photo4 && (
+                                    <div>
+                                        <img className="rounded-xl" src={item.photo4} alt={`Image 4`}/>
+                                        <p className="legend">Photo 4 Caption</p>
+                                    </div>
+                                )}
+                                {item.photo5 && (
+                                    <div>
+                                        <img className="rounded-xl" src={item.photo5} alt={`Image 5`}/>
+                                        <p className="legend">Photo 5 Caption</p>
+                                    </div>
+                                )}
+                            </Carousel>
+                            <div className="card-content">
+                                <h2>{item.roomtype}</h2>
+                                <p>{item.description}</p>
                             </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg"
-                                     alt="Image 2"/>
-                                <p className="legend">Corner Suites 2</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg"
-                                     alt="Image 3"/>
-                                <p className="legend">Corner Suites 3</p>
-                            </div>
-
-                        </Carousel>
-                        <div className="card-content">
-                            <h2>Corner Suites</h2>
-                            <p>The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate
-                                sitting
-                                room
-                                and bedroom areas, divided by louvered doors. </p>
                         </div>
                     </div>
-                </div>
-                <div
-                    className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
-                    <div className="card">
-                        <Carousel showThumbs={false}>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg"
-                                     alt="Image 1"/>
-                                <p className="legend">Corner Suites</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg"
-                                     alt="Image 2"/>
-                                <p className="legend">Corner Suites 2</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg"
-                                     alt="Image 3"/>
-                                <p className="legend">Corner Suites 3</p>
-                            </div>
-
-                        </Carousel>
-                        <div className="card-content">
-                            <h2>Corner Suites</h2>
-                            <p>The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate
-                                sitting
-                                room
-                                and bedroom areas, divided by louvered doors. </p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
-                    <div className="card">
-                        <Carousel showThumbs={false}>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg"
-                                     alt="Image 1"/>
-                                <p className="legend">Corner Suites</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg"
-                                     alt="Image 2"/>
-                                <p className="legend">Corner Suites 2</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg"
-                                     alt="Image 3"/>
-                                <p className="legend">Corner Suites 3</p>
-                            </div>
-
-                        </Carousel>
-                        <div className="card-content">
-                            <h2>Corner Suites</h2>
-                            <p>The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate
-                                sitting
-                                room
-                                and bedroom areas, divided by louvered doors. </p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
-                    <div className="card">
-                        <Carousel showThumbs={false}>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg"
-                                     alt="Image 1"/>
-                                <p className="legend">Corner Suites</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg"
-                                     alt="Image 2"/>
-                                <p className="legend">Corner Suites 2</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg"
-                                     alt="Image 3"/>
-                                <p className="legend">Corner Suites 3</p>
-                            </div>
-
-                        </Carousel>
-                        <div className="card-content">
-                            <h2>Corner Suites</h2>
-                            <p>The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate
-                                sitting
-                                room
-                                and bedroom areas, divided by louvered doors. </p>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
+
         </>
     ) : (
         <>
             <div id="rooms" className="product-container">
-                <div
-                    className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
-                    <div className="card">
-                        <Carousel showThumbs={false}>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg"
-                                     alt="Image 1"/>
-                                <p className="legend">Corner Suites</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg"
-                                     alt="Image 2"/>
-                                <p className="legend">Corner Suites 2</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg"
-                                     alt="Image 3"/>
-                                <p className="legend">Corner Suites 3</p>
-                            </div>
+                {data.map((item, index) => (
+                    <div key={index}
+                         className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
+                        <div className="card">
+                            <Carousel showThumbs={false}>
+                                {item.photo1 && (
+                                    <div>
+                                        <img className="rounded-xl" src={item.photo1} alt={`Image 1`}/>
+                                        <p className="legend">Corner Suites</p>
+                                    </div>
+                                )}
+                                {item.photo2 && (
+                                    <div>
+                                        <img className="rounded-xl" src={item.photo2} alt={`Image 2`}/>
+                                        <p className="legend">Corner Suites 2</p>
+                                    </div>
+                                )}
+                                {item.photo3 && (
+                                    <div>
+                                        <img className="rounded-xl" src={item.photo3} alt={`Image 3`}/>
+                                        <p className="legend">Corner Suites 3</p>
+                                    </div>
+                                )}
+                            </Carousel>
 
-                        </Carousel>
+                        </div>
                         <div className="card-content">
-                            <h2>Corner Suites</h2>
-                            <p>The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate
-                                sitting
-                                room
-                                and bedroom areas, divided by louvered doors. </p>
+                            <h2>{item.roomtype}</h2>
+                            <p>{item.description}</p>
                         </div>
                     </div>
-                </div>
-                <div
-                    className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
-                    <div className="card">
-                        <Carousel showThumbs={false}>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg"
-                                     alt="Image 1"/>
-                                <p className="legend">Corner Suites</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg"
-                                     alt="Image 2"/>
-                                <p className="legend">Corner Suites 2</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg"
-                                     alt="Image 3"/>
-                                <p className="legend">Corner Suites 3</p>
-                            </div>
-
-                        </Carousel>
-                        <div className="card-content">
-                            <h2>Corner Suites</h2>
-                            <p>The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate
-                                sitting
-                                room
-                                and bedroom areas, divided by louvered doors. </p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
-                    <div className="card">
-                        <Carousel showThumbs={false}>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg"
-                                     alt="Image 1"/>
-                                <p className="legend">Corner Suites</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg"
-                                     alt="Image 2"/>
-                                <p className="legend">Corner Suites 2</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg"
-                                     alt="Image 3"/>
-                                <p className="legend">Corner Suites 3</p>
-                            </div>
-
-                        </Carousel>
-                        <div className="card-content">
-                            <h2>Corner Suites</h2>
-                            <p>The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate
-                                sitting
-                                room
-                                and bedroom areas, divided by louvered doors. </p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
-                    <div className="card">
-                        <Carousel showThumbs={false}>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg"
-                                     alt="Image 1"/>
-                                <p className="legend">Corner Suites</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg"
-                                     alt="Image 2"/>
-                                <p className="legend">Corner Suites 2</p>
-                            </div>
-                            <div>
-                                <img className="rounded-xl"
-                                     src="https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg"
-                                     alt="Image 3"/>
-                                <p className="legend">Corner Suites 3</p>
-                            </div>
-
-                        </Carousel>
-                        <div className="card-content">
-                            <h2>Corner Suites</h2>
-                            <p>The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate
-                                sitting
-                                room
-                                and bedroom areas, divided by louvered doors. </p>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
+
         </>
 
     )

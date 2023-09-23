@@ -1,12 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {ChevronDownIcon} from "@heroicons/react/20/solid";
-import {tr} from "date-fns/locale";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
-
-const App = () => {
-
+const Datepick = ({ setSelectedDate }) => {
     const [dateRange, setDateRange] = useState([null, null]);
     const [startDate, endDate] = dateRange;
     const [isDatePickerOpen, setIsDatePickerOpen] = useState(false);
@@ -14,7 +11,9 @@ const App = () => {
     const onChange = (dates) => {
         setDateRange(dates);
         setIsDatePickerOpen(false);
+        setSelectedDate(dates); // Seçilen tarihi ana bileşene aktar
     };
+
     return (
         <div className="font-normal flex items-center p-0">
             <div
@@ -31,6 +30,7 @@ const App = () => {
                     placeholderText="Dates"
                     allowSameDay={true}
                     minDate={new Date()}
+                    dateFormat='dd/MM/yyyy'
                 />
                 {!isDatePickerOpen && (
                     <ChevronDownIcon
@@ -43,4 +43,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Datepick;
