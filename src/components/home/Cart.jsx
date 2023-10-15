@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import ShopingCart from '../../icons/ShopingCart';
 import CartComp from "./CartComp";
 

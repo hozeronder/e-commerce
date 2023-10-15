@@ -3,17 +3,13 @@ import {useSelector} from 'react-redux';
 import {Carousel} from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import axios from "axios";
+import Formdata from "../cart/Formdata";
 
 
 const CardComp = () => {
     const [data, setData] = useState([]);
     const [cart, setCart] = useState([]);
     const searchbox = useSelector((state) => state.searchbox.searchbox);
-
-
-    useEffect(() => {
-        fetchData();
-    }, []);
 
     const fetchData = async () => {
         try {
@@ -23,6 +19,10 @@ const CardComp = () => {
             console.error('Error fetching data:', error);
         }
     };
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     const decreaseItem = (item) => {
         const updatedCart = [...cart];
@@ -36,18 +36,6 @@ const CardComp = () => {
         }
     };
 
-    const addItemToCart = (item) => {
-        const updatedCart = [...cart];
-        const existingItemIndex = updatedCart.findIndex((cartItem) => cartItem.room_id === item.room_id);
-
-        if (existingItemIndex !== -1) {
-            updatedCart[existingItemIndex].quantity += 1;
-        } else {
-            updatedCart.push({...item, quantity: 1});
-        }
-
-        setCart(updatedCart);
-    };
 
     const increaseItem = (item) => {
         const updatedCart = [...cart];
@@ -127,7 +115,8 @@ const CardComp = () => {
                 </div>
                 <div className="col-span-3 md:col-span-2 bg-white bg-opacity-20 rounded-xl m-1 mt-10 md:mx-4 mb-8">
                     <div className="sticky top-0 m-auto">
-                        <h2 className="flex justify-center mt-2 basket bg-black bg-opacity-30 mb-8">Your booking details</h2>
+                        <h2 className="flex justify-center mt-2 basket bg-black bg-opacity-30 mb-8">Your booking
+                            details</h2>
                         <div className="grid grid-cols-6 align-middle basket mb-8">
                             {Object.keys(searchbox).map((key) => {
                                 const value = searchbox[key];
@@ -140,7 +129,7 @@ const CardComp = () => {
                                 if (isKey0) {
                                     return (
                                         <div key={key} className="basket col-span-3 text-end">
-                                             {value.slice(0, 10)}
+                                            {value.slice(0, 10)}
                                         </div>
                                     );
                                 } else if (isKey1) {
@@ -177,6 +166,7 @@ const CardComp = () => {
                                     );
                                 }
                             })}
+
                         </div>
                         {cart.length > 0 && (
                             <ul>
@@ -190,7 +180,9 @@ const CardComp = () => {
                                 ))}
                             </ul>
                         )}
-                        <div className="bg-black bg-opacity-30 mt-10 m-auto text-center">TOTAL AMOUNT: {totalAmount}$</div>
+                        <div className="bg-black bg-opacity-30 mt-10 m-auto text-center">TOTAL AMOUNT: {totalAmount}$
+                        </div>
+                        <Formdata></Formdata>
                     </div>
 
 

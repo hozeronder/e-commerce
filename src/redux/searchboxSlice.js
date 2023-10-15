@@ -7,7 +7,7 @@ const searchboxSlice = createSlice({
     initialState,
     reducers: {
         setSearchbox: (state, action) => {
-            state.searchbox = action.payload; // Burada action.payload bir dizi olmalıdır.
+            state.searchbox = action.payload;
         },
     },
 });

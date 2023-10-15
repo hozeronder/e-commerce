@@ -1,0 +1,54 @@
+[
+  {
+    "room_id": 1,
+    "roomtype": "Standard",
+    "price": "200",
+    "photo1": "https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg",
+    "photo2": "https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg",
+    "photo3": "https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg",
+    "photo4": null,
+    "photo5": null,
+    "available room number": "50",
+    "description": "The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate sitting room and bedroom areas, divided by louvered doors.",
+    "total room": "50"
+  },
+  {
+    "room_id": 2,
+    "roomtype": "Superior",
+    "price": "240",
+    "photo1": "https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg",
+    "photo2": "https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg",
+    "photo3": "https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg",
+    "photo4": null,
+    "photo5": null,
+    "available room number": "20",
+    "description": "The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate sitting room and bedroom areas, divided by louvered doors.",
+    "total room": "20"
+  },
+  {
+    "room_id": 3,
+    "roomtype": "Super Deluxe",
+    "price": "280",
+    "photo1": "https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg",
+    "photo2": "https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg",
+    "photo3": "https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg",
+    "photo4": null,
+    "photo5": null,
+    "available room number": "10",
+    "description": "The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate sitting room and bedroom areas, divided by louvered doors.",
+    "total room": "10"
+  },
+  {
+    "room_id": 4,
+    "roomtype": "Executive Suite",
+    "price": "400",
+    "photo1": "https://hotelandra.com/wp-content/uploads/2022/01/Andra2188-Lux-Suite-Bedroom.jpg",
+    "photo2": "https://hotelandra.com/wp-content/uploads/2022/01/Andra21280-Lux-Suite-768x512.jpg",
+    "photo3": "https://hotelandra.com/wp-content/uploads/2022/01/Andra1985-Superia-Room_TV.jpg",
+    "photo4": null,
+    "photo5": null,
+    "available room number": "5",
+    "description": "The Corner One Bedrooms Suites (500 sq. ft) offer one king bed and feature separate sitting room and bedroom areas, divided by louvered doors.",
+    "total room": "5"
+  }
+]

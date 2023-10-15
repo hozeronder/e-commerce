@@ -7,14 +7,13 @@ import Wheelpick from "./Wheelpick";
 import Wheelpick2 from "./Wheelpick2";
 import Product from "./Product";
 import {useNavigate} from 'react-router-dom';
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {setSearchbox} from "../../redux/searchboxSlice";
 
 
 const MiddleComp = () => {
     const [selectedRoom, setSelectedRoom] = useState(1);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
 
 
     const toggleMenu = () => {
@@ -37,7 +36,6 @@ const MiddleComp = () => {
     const [selectedValue, setSelectedValue] = useState("2");
     const [selectedValue2, setSelectedValue2] = useState("0");
     const history = useNavigate();
-    const searchbox = useSelector((state) => state.searchbox.searchbox);
     const dispatch = useDispatch();
     const sendDataToLocal = async () => {
 
@@ -49,14 +47,8 @@ const MiddleComp = () => {
             selectedValue2,
         ];
         dispatch(setSearchbox(newSearchboxData));
-
+        history("/cart");
     };
-    useEffect(() => {
-        if (searchbox.length > 0) {
-            history('/cart');
-        }
-    }, [searchbox, history]);
-
 
     return (
         <>
