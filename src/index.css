@@ -55,10 +55,6 @@ body::-webkit-scrollbar {
     justify-content: center;
 }
 
-.background-footer {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
 .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 48;
 }
@@ -106,14 +102,12 @@ body::-webkit-scrollbar {
 }
 
 .footer {
+    margin: auto;
     display: block;
     height: 24rem;
-    margin: auto;
-    width: 80%;
+    width: 75%;
     padding: 0;
-    border-radius: 1rem;
     float: none;
-    margin-bottom: 2rem;
 }
 
 
@@ -215,7 +209,6 @@ body::-webkit-scrollbar {
         margin: auto;
         width: 100%;
         padding: 0;
-        border-radius: 1rem;
         float: none;
         margin-bottom: 2rem;
     }
@@ -283,6 +276,18 @@ button:disabled{
 }
 
 .map-container{
-    height: 20vh;
     border-radius: 1rem;
+    height: 30vh;
+    margin: auto;
+    width: 80%;
+    opacity: 67%;
+    transition: opacity 1s, width 1s, height 1s;
+
+}
+.map-container:hover {
+
+    height: 40vh;
+    opacity: 100%;
+    margin: auto;
+    width: 90%;
 }

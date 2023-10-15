@@ -25,36 +25,36 @@ const Product = ({isSmallScreen}) => {
             <div id="rooms" className="product-container">
                 {data.map((item, index) => (
                     <div key={index}
-                         className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
+                         className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 relative cursor-pointer">
                         <div className="card">
                             <Carousel showThumbs={false}>
                                 {item.photo1 && (
                                     <div>
-                                        <img className="rounded-xl" src={item.photo1} alt={`Image 1`}/>
+                                        <img className="" src={item.photo1} alt={`Image 1`}/>
                                         <p className="legend">Photo 1 Caption</p>
                                     </div>
                                 )}
                                 {item.photo2 && (
                                     <div>
-                                        <img className="rounded-xl" src={item.photo2} alt={`Image 2`}/>
+                                        <img className="" src={item.photo2} alt={`Image 2`}/>
                                         <p className="legend">Photo 2 Caption</p>
                                     </div>
                                 )}
                                 {item.photo3 && (
                                     <div>
-                                        <img className="rounded-xl" src={item.photo3} alt={`Image 3`}/>
+                                        <img className="" src={item.photo3} alt={`Image 3`}/>
                                         <p className="legend">Photo 3 Caption</p>
                                     </div>
                                 )}
                                 {item.photo4 && (
                                     <div>
-                                        <img className="rounded-xl" src={item.photo4} alt={`Image 4`}/>
+                                        <img className="" src={item.photo4} alt={`Image 4`}/>
                                         <p className="legend">Photo 4 Caption</p>
                                     </div>
                                 )}
                                 {item.photo5 && (
                                     <div>
-                                        <img className="rounded-xl" src={item.photo5} alt={`Image 5`}/>
+                                        <img className="" src={item.photo5} alt={`Image 5`}/>
                                         <p className="legend">Photo 5 Caption</p>
                                     </div>
                                 )}
@@ -74,25 +74,22 @@ const Product = ({isSmallScreen}) => {
             <div id="rooms" className="product-container">
                 {data.map((item, index) => (
                     <div key={index}
-                         className="w-[350px] h-[450px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-20 rounded-xl relative cursor-pointer">
+                         className="w-[300px] h-[350px] p-3 mt-20 mb-5 mx-5 bg-white bg-opacity-10  relative cursor-pointer">
                         <div className="card">
                             <Carousel showThumbs={false}>
                                 {item.photo1 && (
                                     <div>
-                                        <img className="rounded-xl" src={item.photo1} alt={`Image 1`}/>
-                                        <p className="legend">Corner Suites</p>
+                                        <img className="" src={item.photo1} alt={`Image 1`}/>
                                     </div>
                                 )}
                                 {item.photo2 && (
                                     <div>
-                                        <img className="rounded-xl" src={item.photo2} alt={`Image 2`}/>
-                                        <p className="legend">Corner Suites 2</p>
+                                        <img className="" src={item.photo2} alt={`Image 2`}/>
                                     </div>
                                 )}
                                 {item.photo3 && (
                                     <div>
-                                        <img className="rounded-xl" src={item.photo3} alt={`Image 3`}/>
-                                        <p className="legend">Corner Suites 3</p>
+                                        <img className="" src={item.photo3} alt={`Image 3`}/>
                                     </div>
                                 )}
                             </Carousel>
