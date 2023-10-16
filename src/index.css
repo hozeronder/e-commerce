@@ -127,7 +127,6 @@ body::-webkit-scrollbar {
 }
 
 .footer-buttons {
-    cursor: pointer;
     font-size: medium;
     display: table;
     padding-top: 1rem;
@@ -136,6 +135,7 @@ body::-webkit-scrollbar {
 }
 
 .footer-buttons span {
+    cursor: pointer;
     background-color: rgba(231, 234, 250, 0.19);
     padding: 0.3rem;
     border-radius: 0.3rem;
@@ -195,7 +195,6 @@ body::-webkit-scrollbar {
     }
 
     .footer-buttons {
-        cursor: pointer;
         font-size: small;
         display: table;
         padding-top: 1rem;
@@ -205,6 +204,7 @@ body::-webkit-scrollbar {
     }
 
     .footer-buttons span {
+        cursor: pointer;
         background-color: rgba(231, 234, 250, 0.19);
         padding: 0.3rem;
         border-radius: 0.3rem;
